@@ -4,16 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+
 
 namespace lab6WPF
 {
@@ -57,6 +49,9 @@ namespace lab6WPF
                 prepod.Post = shortInfo.Elements("field").Where(e =>
                e.Attributes["class"].Value == "post field-inf").ToList()[0].Element("value").InnerText;
                 Films.Add(prepod);
+                prepod.Post = shortInfo.Elements("field").Where(e =>
+               e.Attributes["class"].Value == "cond field-inf").ToList()[0].Element("value").InnerText;
+
             }
             list.ItemsSource = Films; //Вывод информации в ListBox
         }
@@ -65,6 +60,8 @@ namespace lab6WPF
             string _name;
             string _rank;
             string _post;
+            string _conditions;
+            string _view;
 
             Uri _imageUrl;
             public Prepod() { }
@@ -82,6 +79,16 @@ namespace lab6WPF
             {
                 get { return _post; }
                 set { _post = value; }
+            }
+            public string Condition
+            {
+                get { return _conditions; }
+                set { _conditions = value; }
+            }
+            public string View
+            {
+                get { return _view; }
+                set { _view = value; }
             }
             public Uri ImageUrl
             {

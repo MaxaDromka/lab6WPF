@@ -21,11 +21,12 @@
                         </Border>
                         <StackPanel Grid.Column="1" Margin="5">
                             <TextBlock Text="{Binding Path=Name}" ToolTip="{Binding Path=Name}" MaxHeight="15"
-                                    FontWeight="Bold" FontSize="14" TextWrapping="Wrap" TextAlignment="Center" 
-TextTrimming="WordEllipsis"/>
+                                    FontWeight="Bold" FontSize="14" TextWrapping="Wrap" TextAlignment="Center" TextTrimming="WordEllipsis"/>
                             <TextBlock Text="{Binding Path=Rank}" ToolTip="{Binding Path=Rank}" MaxHeight="100"
                                     TextWrapping="Wrap" TextTrimming="WordEllipsis" TextAlignment="Justify" />
                             <TextBlock Text="{Binding Path=Post}" ToolTip="{Binding Path=Post}" MaxHeight="100"
+                                    TextWrapping="Wrap" TextTrimming="WordEllipsis" TextAlignment="Justify" />
+                            <TextBlock Text="{Binding Path=View}" ToolTip="{Binding Path=View}" MaxHeight="100"
                                     TextWrapping="Wrap" TextTrimming="WordEllipsis" TextAlignment="Justify" />
                         </StackPanel>
                     </Grid>
