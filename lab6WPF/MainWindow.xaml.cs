@@ -35,15 +35,13 @@ namespace lab6WPF
                 imgUrl = info.Elements("div").
                 Where(e => e.Attributes["class"].Value ==
                "teacher_photo").ToList()[0].
-               Element("a").Element("img").Attributes["src"].Value; //получение ссылки на изображение
+               Element("a").Element("img").Attributes["src"].Value; 
                 prepod.ImageUrl = new Uri(imgUrl);
-
                 HtmlNode shortInfo = info.Elements("div").
                 Where(e => e.Attributes["class"].Value ==
                "pers_data").ToList()[0]; //блок с краткой информацией
                 prepod.Name = shortInfo.Elements("field").Where(e =>
                e.Attributes["class"].Value == "name field-inf").ToList()[0].Element("value").InnerText;
-
                 prepod.Rank = shortInfo.Elements("field").Where(e =>
                e.Attributes["class"].Value == "title field-inf").ToList()[0].Element("value").InnerText;
                 prepod.Post = shortInfo.Elements("field").Where(e =>
